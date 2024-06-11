@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import AppName from "/Users/Asus/github-repo/Todo-App/Todo-App-Version-1/src/AppName"
+import AddTodo from "/Users/Asus/github-repo/Todo-App/Todo-App-Version-1/src/AddTodo"
 function App() {
-  const [count, setCount] = useState(0)
+  return <center class="todo-container">
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <AppName></AppName>
+    <AddTodo></AddTodo>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-6">
+          Buy Milk
+        </div>
+        <div class="col-4">
+          4/10/2023
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-danger">delete</button>
+          </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div class="row">
+        <div class="col-6">
+          Go To College
+        </div>
+        <div class="col-4">
+          4/10/2023
+        </div>
+        <div class="col-2">
+          <button type="button" class="btn btn-danger">delete</button>
+          </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  </center>
 }
 
 export default App
