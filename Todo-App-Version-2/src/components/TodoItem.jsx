@@ -1,7 +1,4 @@
-function TodoItem1(){
-    let name = 'Buy Milk';
-    let date = ' 4/10/2023'
-
+function TodoItem({name,date}){
     return( <div class="container">
     <div class="row a-row">
       <div class="col-6">{name}</div>
@@ -12,4 +9,4 @@ function TodoItem1(){
     </div>
     );
 }
-export default TodoItem1;
+export default TodoItem;
