@@ -1,16 +1,28 @@
 function AddTodo() {
   return( 
-  <div className="conatiner text-center">
-    <div class="row a-row">
-    <div class="col-6">
-      <input type="text" placeholder="enter todo here" />
+    <div className="container text-center">
+    <div className="row kg-row">
+      <div className="col-6">
+        <input
+          type="text"
+          placeholder="Enter Todo Here"
+          value={todoName}
+          onChange={handleNameChange}
+        />
+      </div>
+      <div className="col-4">
+        <input type="date" value={dueDate} onChange={handleDateChange} />
+      </div>
+      <div className="col-2">
+        <button
+          type="button"
+          className="btn btn-success kg-button"
+          onClick={handleAddButtonClicked}
+        >
+          Add
+        </button>
+      </div>
     </div>
-    <div class="col-4"><input type="date"/>
-    </div>
-    <div class="col-2">
-      <button type="button" class="btn btn-success a-btn">add</button>
-    </div>
-  </div>
   </div>
   );
 }
