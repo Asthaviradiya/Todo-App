@@ -1,6 +1,6 @@
 import AppName from "/Users/Asus/github-repo/Todo-App/Todo-App-Version-1/src/AppName"
 import AddTodo from "/Users/Asus/github-repo/Todo-App/Todo-App-Version-1/src/AddTodo"
-
+import WelcomeMessage from "./components/WelcomeMessage"
 import TodoItems from "./components/TodoItems"
 import "./App.css"
 import { useState } from "react"
@@ -37,7 +37,7 @@ const handleDeleteItem = (todoItemName) => {
     <AppName></AppName>
     <AddTodo onNewItem={handleNewItem}></AddTodo>
     <TodoItems todoItems={initialTodoItems}></TodoItems>
-    
+    {todoItems.length === 0 && <WelcomeMessage></WelcomeMessage>}
     
   </center>
   );
