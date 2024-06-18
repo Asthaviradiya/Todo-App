@@ -3,9 +3,10 @@ import AddTodo from "/Users/Asus/github-repo/Todo-App/Todo-App-Version-1/src/Add
 
 import TodoItems from "./components/TodoItems"
 import "./App.css"
+import { useState } from "react"
 
 function App() {
-  const todoItems = [{
+  const initialTodoItems = [{
     name:'buy milk',
     date: '4-4-2024'
   },
@@ -18,11 +19,24 @@ function App() {
     date: 'right now'
   }
 ]
+const [todoItems, setTodoItems] = useState(initialTodoItems);
+const handleNewItem = (itemName, itemDueDate) => {
+    console.log(`new item added ${itemName} date:${itemDueDate}`)
+    const newTodoItems = [
+      ...todoItems,
+      { name: itemName, dueDate: itemDueDate },
+    ];
+    setTodoItems(newTodoItems);
+}
+const handleDeleteItem = (todoItemName) => {
+  const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+  setTodoItems(newTodoItems);
+};
   return( <center class="todo-container">
 
     <AppName></AppName>
-    <AddTodo></AddTodo>
-    <TodoItems todoItems={todoItems}></TodoItems>
+    <AddTodo onNewItem={handleNewItem}></AddTodo>
+    <TodoItems todoItems={initialTodoItems}></TodoItems>
     
     
   </center>
