@@ -1,0 +1,9 @@
+input{
+    width: 100%;
+}
+.a-row{
+    margin: 10px 5px;
+}
+.a-btn{
+    min-width: 80px;
+}
